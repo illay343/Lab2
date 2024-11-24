@@ -140,28 +140,28 @@
 # if __name__ == '__main__':
 #     app.run(port=8000)
 #########################################################
-from flask import Flask, request  # Імпортуємо Flask для створення сервера та обробки запитів
+# from flask import Flask, request  # Імпортуємо Flask для створення сервера та обробки запитів
 
-app = Flask(__name__)  # Ініціалізуємо Flask-додаток
+# app = Flask(__name__)  # Ініціалізуємо Flask-додаток
 
-@app.route("/save", methods=["POST"])  # Визначаємо маршрут /save, який обробляє тільки метод POST
-def save_to_file():
-    # Отримуємо дані з тіла POST-запиту, декодуємо з байтів у рядок UTF-8
-    data = request.data.decode('utf-8')
+# @app.route("/save", methods=["POST"])  # Визначаємо маршрут /save, який обробляє тільки метод POST
+# def save_to_file():
+#     # Отримуємо дані з тіла POST-запиту, декодуємо з байтів у рядок UTF-8
+#     data = request.data.decode('utf-8')
     
-    # Перевіряємо, чи передані дані
-    if not data:
-        return "No data provided", 400  # Повертаємо помилку 400 (Bad Request), якщо дані відсутні
+#     # Перевіряємо, чи передані дані
+#     if not data:
+#         return "No data provided", 400  # Повертаємо помилку 400 (Bad Request), якщо дані відсутні
     
-    # Відкриваємо файл "data.txt" у режимі дозапису ("a") і додаємо дані
-    with open("data.txt", "a") as file:
-        file.write(data + "\n")  # Кожен запис додається з нового рядка
+#     # Відкриваємо файл "data.txt" у режимі дозапису ("a") і додаємо дані
+#     with open("data.txt", "a") as file:
+#         file.write(data + "\n")  # Кожен запис додається з нового рядка
     
-    # Повертаємо повідомлення про успішне збереження
-    return "Data saved to file!"
+#     # Повертаємо повідомлення про успішне збереження
+#     return "Data saved to file!"
 
-if __name__ == '__main__':
-    # Запускаємо сервер Flask на порту 8000
-    app.run(port=8000)
+# if __name__ == '__main__':
+#     # Запускаємо сервер Flask на порту 8000
+#     app.run(port=8000)
 
 
